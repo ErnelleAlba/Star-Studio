@@ -1,12 +1,15 @@
-import { ThemeProvider } from "styled-components";
-import GlobalStyles from "./styles/GlobalStyles";
-import { dark } from "./styles/Themes";
+import "locomotive-scroll/dist/locomotive-scroll.min.css";
+
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
-import { useRef } from "react";
-import "locomotive-scroll/dist/locomotive-scroll.css";
 import { AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "styled-components";
+import { useRef } from "react";
+import GlobalStyles from "./styles/GlobalStyles";
 import Home from "./sections/Home";
 import About from "./sections/About";
+import Shop from "./sections/Shop";
+import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
+import { dark } from "./styles/Themes";
 
 function App() {
   const containerRef = useRef(null);
@@ -19,6 +22,12 @@ function App() {
           options={{
             smooth: true,
             // ... all available Locomotive Scroll instance options
+            smartphone: {
+              smooth: true,
+            },
+            tablet: {
+              smooth: true,
+            },
           }}
           watch={
             [
@@ -29,10 +38,12 @@ function App() {
           }
           containerRef={containerRef}
         >
+          <ScrollTriggerProxy />
           <AnimatePresence>
-            <main data-scroll-container ref={containerRef}>
+            <main className="app" data-scroll-container ref={containerRef}>
               <Home />
               <About />
+              <Shop />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>
