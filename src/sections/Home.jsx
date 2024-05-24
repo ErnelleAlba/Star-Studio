@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 
 const Section = styled.section`
   position: relative;
-  min-height: 200dvh;
+  min-height: 100dvh;
   overflow: hidden;
 `;
 
