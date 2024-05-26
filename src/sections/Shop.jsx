@@ -18,6 +18,7 @@ const Section = styled.section`
   align-items: flex-start;
   position: relative;
 `;
+
 const Title = styled.h1`
   font-size: ${(props) => props.theme.fontxxxl};
   font-family: "Kaushan Script";
@@ -136,6 +137,7 @@ function Shop() {
         ease: "none",
       });
 
+      // Horizontal Scrolling
       t1.to(scrollingElement, {
         scrollTrigger: {
           trigger: scrollingElement,
@@ -150,6 +152,12 @@ function Shop() {
       });
       ScrollTrigger.refresh();
     }, 1000);
+
+    return () => {
+      // To clear instances
+      t1.kil();
+      ScrollTrigger.kill();
+    };
   }, []);
 
   return (
@@ -180,7 +188,7 @@ function Shop() {
         <Product img={assets.img_5} title="Blazers" />
         <Product img={assets.img_6} title="Suits" />
         <Product img={assets.img_7} title="Antiques" />
-        <Product img={assets.img_8} title="Jewelery" />
+        <Product img={assets.img_8} title="Jewelry" />
         <Product img={assets.img_9} title="Watches" />
         <Product img={assets.img_10} title="Special Edition" />
       </Right>
