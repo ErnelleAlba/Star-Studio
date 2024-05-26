@@ -10,6 +10,7 @@ import About from "./sections/About";
 import Shop from "./sections/Shop";
 import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
 import { dark } from "./styles/Themes";
+import Banner from "./sections/Banner";
 
 function App() {
   const containerRef = useRef(null);
@@ -44,6 +45,7 @@ function App() {
               <Home />
               <About />
               <Shop />
+              <Banner />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>
