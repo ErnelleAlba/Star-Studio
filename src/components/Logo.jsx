@@ -48,7 +48,7 @@ const textVariants = {
 
     transition: {
       duration: 2,
-      delay: 2,
+      delay: 6,
       ease: "easeInOut",
     },
   },
@@ -65,6 +65,7 @@ const pathVariants = {
 
     transition: {
       duration: 2,
+      delay: 4,
       ease: "easeInOut",
     },
   },
