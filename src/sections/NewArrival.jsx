@@ -142,7 +142,7 @@ function NewArrival() {
   }, []);
 
   return (
-    <Section ref={ref}>
+    <Section ref={ref} id="new-arrival">
       <Overlay />
       <Title
         data-scroll

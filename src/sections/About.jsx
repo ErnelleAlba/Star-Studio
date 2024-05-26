@@ -57,7 +57,7 @@ const Right = styled.div`
 function About() {
   return (
     <>
-      <Section id="fixed-target">
+      <Section id="fixed-target" className="about">
         <Title
           data-scroll
           data-scroll-speed="-2"
@@ -83,14 +83,20 @@ function About() {
         </Left>
         <Right>
           <img src={assets.img_1} alt="About Us" />
-          <img 
-          data-scroll 
-          data-scroll-speed="5"
-          src={assets.img_2} className="small-img-1" alt="About Us" />
-          <img 
-          data-scroll 
-          data-scroll-speed="-2"
-          src={assets.img_3} className="small-img-2" alt="About Us" />
+          <img
+            data-scroll
+            data-scroll-speed="5"
+            src={assets.img_2}
+            className="small-img-1"
+            alt="About Us"
+          />
+          <img
+            data-scroll
+            data-scroll-speed="-2"
+            src={assets.img_3}
+            className="small-img-2"
+            alt="About Us"
+          />
         </Right>
       </Section>
     </>

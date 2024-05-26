@@ -13,6 +13,8 @@ import img_12 from  '../Images/12.webp'
 import img_13 from  '../Images/13.webp'
 import img_14 from  '../Images/14.webp'
 
+import logo_footer from '../Images/star_white_48dp.svg'
+
 export const assets = {
     img_1,
     img_2,
@@ -27,5 +29,6 @@ export const assets = {
     img_11,
     img_12,
     img_13,
-    img_14
+    img_14,
+    logo_footer
 };
