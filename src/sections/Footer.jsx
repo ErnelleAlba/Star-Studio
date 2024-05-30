@@ -31,8 +31,12 @@ const LogoContainer = styled.div`
   }
 
   h3 {
-    font-size: ${(props) => props.theme.fontxl};
+    font-size: ${(props) => props.theme.fontxxl};
     font-family: "Kaushan Script";
+
+    @media (max-width: 768px) {
+      font-size: ${(props) => props.theme.fontxl};
+    }
   }
 `;
 
@@ -42,11 +46,35 @@ const Bottom = styled.div`
   font-size: ${(props) => props.theme.fontlg};
 
   display: flex;
+  justify-content: space-between;
   align-items: center;
+
+  a {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    span {
+      transform: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontmd};
+  }
 `;
 
 const FooterComponent = styled(motion.footer)`
   width: 80dvw;
+
+  @media (max-width: 768px) {
+    width: 90dvw;
+    justify-content: center;
+  }
 
   ul {
     list-style-type: none;
@@ -59,6 +87,10 @@ const FooterComponent = styled(motion.footer)`
     padding: 0 1rem;
     border-top: 1px solid ${(props) => props.theme.text};
     border-bottom: 1px solid ${(props) => props.theme.text};
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
 
   li {
@@ -70,6 +102,11 @@ const FooterComponent = styled(motion.footer)`
 
     &:hover {
       transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+      font-size: ${(props) => props.theme.fontmd};
     }
   }
 `;
@@ -131,6 +168,16 @@ function Footer() {
             data-scroll-direction="horizontal"
           >
             &copy; {new Date().getFullYear()}. All Rights Reserved.
+          </span>
+          <span
+            data-scroll
+            data-scroll-speed="-2"
+            data-scroll-direction="horizontal"
+          >
+            Made with &hearts; by{" "}
+            <a href="https://github.com/ErnelleAlba" target={"_blank"}>
+              Ernelle Alba
+            </a>
           </span>
         </Bottom>
       </FooterComponent>

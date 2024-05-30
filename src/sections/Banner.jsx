@@ -10,6 +10,10 @@ const Section = styled.section`
   align-items: center;
 
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 90dvw;
+  }
 `;
 
 const Container = styled.div`
@@ -18,6 +22,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 const BannerComponent = styled.h1`
@@ -32,6 +40,22 @@ const BannerComponent = styled.h1`
     display: block;
     background-color: ${(props) => props.theme.body};
     padding: 1rem 2rem;
+  }
+  @media (max-width: 1120px) {
+    font-size: ${(props) => props.theme.fontxxl};
+  }
+
+  @media (max-width: 1024px) {
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontlg};
+    margin: 0.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: ${(props) => props.theme.fontmd};
   }
 `;
 

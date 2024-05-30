@@ -29,6 +29,14 @@ const Title = styled.h1`
   top: 1rem;
   left: 5%;
   z-index: 11;
+
+  @media (max-width: 1024px) {
+    font-size: ${(props) => props.theme.fontxxl};
+  }
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontxl};
+  }
 `;
 
 const Left = styled.div`
@@ -50,6 +58,25 @@ const Left = styled.div`
     font-weight: 300;
     width: 80%;
     margin: 0 auto;
+  }
+
+  @media (max-width: 1024px) {
+    p {
+      font-size: ${(props) => props.theme.fontmd};
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 40%;
+    p {
+      font-size: ${(props) => props.theme.fontsm};
+    }
+  }
+
+  @media (max-width: 480px) {
+    p {
+      font-size: ${(props) => props.theme.fontxs};
+    }
   }
 `;
 
@@ -92,6 +119,10 @@ const Item = styled(motion.div)`
     font-weight: 500;
     text-align: center;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    width: 15rem;
   }
 `;
 

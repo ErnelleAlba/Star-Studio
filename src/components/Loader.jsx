@@ -37,12 +37,22 @@ const Container = styled(motion.div)`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    svg {
+      width: 20dvw;
+    }
+  }
 `;
 
 const Text = styled(motion.span)`
   font-size: ${(props) => props.theme.fontxl};
   color: ${(props) => props.theme.text};
   padding-top: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontlg};
+  }
 `;
 
 const textVariants = {

@@ -13,6 +13,10 @@ const Section = styled.section`
   justify-content: center;
   align-items: center;
   position: relative;
+
+  @media (max-width: 1120px) {
+    margin-top: 1rem;
+  }
 `;
 
 const Overlay = styled.div`
@@ -25,6 +29,25 @@ const Overlay = styled.div`
   z-index: 11;
   box-shadow: 0 0 0 4dvw ${(props) => props.theme.text};
   border: 3px solid black;
+
+  @media (max-width: 1120px) {
+    width: 40dvw;
+    height: 80dvh;
+  }
+
+  @media (max-width: 1024px) {
+    width: 50dvw;
+    box-shadow: 0 0 0 60dvw ${(props) => props.theme.text};
+  }
+
+  @media (max-width: 768px) {
+    width: 60dvw;
+  }
+
+  @media (max-width: 480px) {
+    width: 80dvw;
+    height: 60dvh;
+  }
 `;
 
 const Title = styled.h1`
@@ -37,6 +60,14 @@ const Title = styled.h1`
   top: 2rem;
   left: 1rem;
   z-index: 15;
+
+  @media (max-width: 1024px) {
+    font-size: ${(props) => props.theme.fontxxl};
+  }
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => props.theme.fontxl};
+  }
 `;
 
 const Text = styled.div`
@@ -48,6 +79,10 @@ const Text = styled.div`
   top: 0;
   right: 0;
   z-index: 11;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Container = styled.div`
@@ -62,6 +97,24 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1120px) {
+    width: 30dvw;
+    padding-top: 5rem;
+  }
+
+  @media (max-width: 1024px) {
+    width: 30dvw;
+  }
+
+  @media (max-width: 768px) {
+    width: 40dvw;
+  }
+
+  @media (max-width: 480px) {
+    width: 60dvw;
+    padding-top: 4rem;
+  }
 `;
 
 const Item = styled.div`
@@ -120,7 +173,7 @@ function NewArrival() {
           y: "0",
         },
         {
-          y: "-76%",
+          y: "-90%",
           scrollTrigger: {
             trigger: scrollingElement,
             start: "top top",
