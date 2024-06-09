@@ -18,12 +18,15 @@ import Loader from "./components/Loader";
 function App() {
   const containerRef = useRef(null);
 
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(true);
+
+  const handleLoading = () => {
+    setLoaded(false);
+  };
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 3000);
+    window.addEventListener("load", handleLoading);
+    return () => window.removeEventListener("load", handleLoading);
   }, []);
 
   return (
@@ -33,7 +36,6 @@ function App() {
         <LocomotiveScrollProvider
           options={{
             smooth: true,
-            // ... all available Locomotive Scroll instance options
             smartphone: {
               smooth: true,
             },
@@ -41,16 +43,10 @@ function App() {
               smooth: true,
             },
           }}
-          watch={
-            [
-              //..all the dependencies you want to watch to update the scroll.
-              //  Basicaly, you would want to watch page/location changes
-              //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
-            ]
-          }
+          watch={[]}
           containerRef={containerRef}
         >
-          <AnimatePresence>{loaded ? null : <Loader />}</AnimatePresence>
+          <AnimatePresence>{!loaded ? null : <Loader />}</AnimatePresence>
           <ScrollTriggerProxy />
           <AnimatePresence>
             <main className="app" data-scroll-container ref={containerRef}>

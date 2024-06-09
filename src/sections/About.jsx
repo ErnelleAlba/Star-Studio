@@ -133,7 +133,7 @@ function About() {
           About Us
         </Title>
         <Left data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
-          We're fashion studio based in california. We create unique designs
+          We are a fashion studio based in California. We create unique designs
           that will blow your mind. We also design unique jewelry pieces.
           Fashion is an ART that can not be grasped by everyone.
           <br />
